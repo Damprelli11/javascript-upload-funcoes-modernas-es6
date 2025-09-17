@@ -51,3 +51,10 @@ inputTags.addEventListener("keypress", (event) => {
     }
   }
 });
+
+listaTags.addEventListener("click", (event) => {
+  if (event.target.classList.contains("remove-tag")) {
+    const tagARemover = event.target.parentElement;
+    listaTags.removeChild(tagARemover);
+  }
+});
