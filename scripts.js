@@ -58,3 +58,18 @@ listaTags.addEventListener("click", (event) => {
     listaTags.removeChild(tagARemover);
   }
 });
+
+const tagsDisponiveis = [
+  "Front-end",
+  "Programação",
+  "Data-Science",
+  "Intercâmbio",
+];
+
+async function verificaTagsDisponiveis(tagTexto) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(tagsDisponiveis.includes(tagTexto));
+    }, 1000);
+  });
+}
