@@ -18,3 +18,20 @@ function letConteudoDoArquivo(arquivo) {
     leitor.readAsDataURL(arquivo);
   });
 }
+
+const imagemPrincipal = document.querySelector(".main-imagem");
+const nomeDaImagem = document.querySelector(".container-imagem-nome p");
+
+inputUpload.addEventListener("change", async (event) => {
+  const arquivo = event.target.files[0];
+
+  if (arquivo) {
+    try {
+      const conteudoDoArquivo = await letConteudoDoArquivo(arquivo);
+      imagemPrincipal.src = conteudoDoArquivo.url;
+      nomeDaImagem.textContent = conteudoDoArquivo.nome;
+    } catch (error) {
+      console.error("Erro na leitura do arquivo: " + error);
+    }
+  }
+});
