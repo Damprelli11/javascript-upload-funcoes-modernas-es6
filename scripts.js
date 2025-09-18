@@ -120,6 +120,19 @@ botaoPublicar.addEventListener("click", async (event) => {
     console.log(error);
     alert("Deu errado");
   }
-
   //console.log(nomeDoProjeto, descricaoDoProjeto, tagsProjeto);
+});
+
+const botaoDescartar = document.querySelector(".botao-descartar");
+
+botaoDescartar.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  const formulario = document.querySelector("form");
+  formulario.reset();
+
+  imagemPrincipal.src = "./img/imagem1.png";
+  nomeDaImagem.textContent = "image_projeto.png";
+
+  listaTags.innerHTML = "";
 });
